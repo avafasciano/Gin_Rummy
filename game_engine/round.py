@@ -113,6 +113,7 @@ class Round():
         Function to play a round between any 2 players
         sets each players points after round ends
         returns round winner
+        print statements used for human player
         '''
         # add dealt cards to each players hands
         playerA.hand.deal(self.new_card_pile)
@@ -129,9 +130,9 @@ class Round():
             self.replace(next_mover, removed_top_of_discard, move)
             next_mover = self.opposite_player(next_mover, playerA, playerB)
         else:
-            print('-------------')
-            print('SWITCH PLAYER')
-            print('-------------')
+            # print('-------------')
+            # print('SWITCH PLAYER')
+            # print('-------------')
             # player 1 passes, second mover either picks up new card or passes
             next_mover = self.opposite_player(next_mover, playerA, playerB)
             move = next_mover.pickup_discard_or_pass(
@@ -145,9 +146,9 @@ class Round():
 
         # Keep switching turns until you run out of new cards, or someone folds (knocks or gins)
         while not move.fold and len(self.new_card_pile.deck) != 0:
-            print('-------------')
-            print('SWITCH PLAYER')
-            print('-------------')
+            # print('-------------')
+            # print('SWITCH PLAYER')
+            # print('-------------')
             move = next_mover.pickup_discard_or_new(
                 self.discard_pile.get_top_card(), next_mover.hand, self.moves[-1])
             if move.type == "pickupNewCard":
@@ -170,21 +171,21 @@ class Round():
         self.score_round(op, next_mover)
         loser = self.opposite_player(
             self.round_winner, playerA, playerB)
-        print('Winner: ' + self.round_winner.get_name() +
-              ', score: ' + str(self.round_winner.get_points()))
-        print('Loser: ' + loser.get_name() +
-              ', score: ' + str(loser.get_points()))
+        # print('Winner: ' + self.round_winner.get_name() +
+        #       ', score: ' + str(self.round_winner.get_points()))
+        # print('Loser: ' + loser.get_name() +
+        #       ', score: ' + str(loser.get_points()))
         playerA.clear_hand()
         playerB.clear_hand()
         return(self.round_winner)
 
 
 # PRINTLINE TESTNG
-player1 = player.HumanPlayer()
-player2 = player.HumanPlayer()
+# player1 = player.HumanPlayer()
+# player2 = player.HumanPlayer()
 
-player1.set_name('Player 1')
-player2.set_name('Player 2')
+# player1.set_name('Player 1')
+# player2.set_name('Player 2')
 
-round1 = Round()
-round1.play(player1, player2)
+# round1 = Round()
+# round1.play(player1, player2)

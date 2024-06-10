@@ -4,8 +4,7 @@ class Card:
     Attributes
     ----------
     suit- int 1..4, where 1 = hearts, 2 = spades, 3 = clubs 
-    rank- 
-    value- int 1..10 (jack, queen, king valued at 10)
+    rank- 1..12
     id- int 1..52
 
 
