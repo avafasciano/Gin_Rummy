@@ -1,0 +1,2 @@
+#specify the dependencies required to contribute to the project: testing, building, and generating documentation
+numpy==1.20.3
